@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { hot } from 'react-hot-loader/root'
 import 'antd/dist/antd.css';
 
 import { DesktopPage } from 'page/DesktopPage';
@@ -14,4 +15,4 @@ const App = () => {
     <DesktopPage />
   );
 }
-export default App;
+export default process.env.NODE_ENV === "development" ? hot(App) : App;
