@@ -1,58 +1,45 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Space } from 'atom/layout';
-import { WindowImpl } from 'state/window';
-import { useApp } from 'state/app';
-import { Align } from 'utils';
-import { GalleryPreviewWindow, GalleryYoutubeWindow } from '../window';
+import { Space } from "atom/layout";
+import { WindowImpl } from "state/window";
+import { useApp } from "state/app";
+import { Align } from "utils";
+import { GalleryPreviewWindow, GalleryYoutubeWindow } from "../window";
 
-const AppIcon = require('asset/icon/gallery.png').default;
+const AppIcon = require("asset/icon/gallery.png").default;
 
 interface GalleryThumbnailProps {
   src: string;
-};
-export const GalleryThumbnail = ({
-  src,
-}: GalleryThumbnailProps) => {
+}
+export const GalleryThumbnail = ({ src }: GalleryThumbnailProps) => {
   const app = useApp();
-  const isYoutube = src?.includes('youtu');
-  const youtubeId = src.match(/youtu(?:.*\/v\/|.*v\=|\.be\/)([A-Za-z0-9_\-]{11})/)?.[1];
+  const isYoutube = src?.includes("youtu");
+  const youtubeId = src.match(
+    /youtu(?:.*\/v\/|.*v\=|\.be\/)([A-Za-z0-9_\-]{11})/
+  )?.[1];
 
   const onClick = () => {
     if (isYoutube) {
       app.showWindow(
         AppIcon,
-        (<GalleryYoutubeWindow youtubeId={youtubeId || ''} />)
+        <GalleryYoutubeWindow youtubeId={youtubeId || ""} />
       );
     } else {
-      app.showWindow(
-        AppIcon,
-        (<GalleryPreviewWindow src={src} />),
-      );
+      app.showWindow(AppIcon, <GalleryPreviewWindow src={src} />);
     }
   };
 
   return (
-    <Container
-      onClick={onClick}
-    >
+    <Container onClick={onClick}>
       <Thumbnail
         src={isYoutube ? `https://img.youtube.com/vi/${youtubeId}/0.jpg` : src}
       />
-      {isYoutube && (
-        <PlayIcon
-          src={require('asset/icon/play.png').default}
-        />
-      )}
+      {isYoutube && <PlayIcon src={require("asset/icon/play.png").default} />}
       <Overlay>
-        <NameText>
-          asdf
-        </NameText>
+        <NameText>downloadMe.bmp</NameText>
         <Space height={32} />
-        <DateText>
-          pjc0247
-        </DateText>
+        <DateText>gomjellie</DateText>
       </Overlay>
     </Container>
   );

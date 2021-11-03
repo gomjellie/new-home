@@ -3,17 +3,13 @@ import styled from "styled-components";
 
 import { Desktop, Shortcut } from "component/desktop";
 import { App } from "state/app";
-import { BladeApp } from "app/blade";
 import { GalleryApp } from "app/gallery";
 import { GithubApp } from "app/github";
-import { RookieApp } from "app/rookie";
 import { BlankApp } from "app/blank";
 import { CodepadApp } from "app/codepad";
 import { LineFeed, Push } from "atom/layout";
 import { LargeClock } from "component/widget";
 import { BrowserApp } from "app/browser/app";
-import { RaniaApp } from "app/rania";
-import { VRApp } from "app/vr";
 import { SlowSharpApp } from "app/slowsharp";
 
 export const DesktopPage = ({}) => {
@@ -53,8 +49,8 @@ export const DesktopPage = ({}) => {
             onClick={() =>
               App.launch(BrowserApp, {
                 url: "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%85%8C%EA%B0%80%EB%85%B8%EA%B7%B8%EB%9E%98%ED%94%BC",
-                width: 1024,
-                height: 640,
+                width: 1080,
+                height: 480,
               })
             }
           />
@@ -65,7 +61,7 @@ export const DesktopPage = ({}) => {
               App.launch(BrowserApp, {
                 url: "https://codechacha.com/ko/linux-cat/",
                 width: 480,
-                height: 740,
+                height: 560,
               })
             }
           />
