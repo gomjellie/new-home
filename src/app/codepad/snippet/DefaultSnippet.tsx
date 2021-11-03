@@ -1,26 +1,5 @@
-export const DefaultSnippet = `// TS is not supported!
-import React from 'react';
-import styled from 'styled-components';
+export const DefaultSnippet = `#!/usr/bin/sh
 
-const HelloWorldApp = () => {
-  return (
-    <Container>
-      <HelloWorldText>
-        Hello World;
-      </HelloWorldText>
-    </Container>
-  );
-};
+cat stegano.png | base64 -d > stegano.txt
 
-const Container = styled.div\`
-  display: flex;
-  width: 100%;
-  height: 100%;
-\`;
-const HelloWorldText = styled.div\`
-  color: white;
-
-  margin: auto auto;
-\`;
-
-HelloWorldApp; // Dont't forget this`;
+`;

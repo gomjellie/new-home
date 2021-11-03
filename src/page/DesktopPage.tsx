@@ -1,165 +1,94 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Desktop, Shortcut } from 'component/desktop';
-import { App } from 'state/app';
-import { BladeApp } from 'app/blade';
-import { GalleryApp } from 'app/gallery';
-import { GithubApp } from 'app/github';
-import { RookieApp } from 'app/rookie';
-import { BlankApp } from 'app/blank';
-import { CodepadApp } from 'app/codepad';
-import { LineFeed, Push } from 'atom/layout';
-import { LargeClock } from 'component/widget';
-import { BrowserApp } from 'app/browser/app';
-import { RaniaApp } from 'app/rania';
-import { VRApp } from 'app/vr';
-import { SlowSharpApp } from 'app/slowsharp';
+import { Desktop, Shortcut } from "component/desktop";
+import { App } from "state/app";
+import { BladeApp } from "app/blade";
+import { GalleryApp } from "app/gallery";
+import { GithubApp } from "app/github";
+import { RookieApp } from "app/rookie";
+import { BlankApp } from "app/blank";
+import { CodepadApp } from "app/codepad";
+import { LineFeed, Push } from "atom/layout";
+import { LargeClock } from "component/widget";
+import { BrowserApp } from "app/browser/app";
+import { RaniaApp } from "app/rania";
+import { VRApp } from "app/vr";
+import { SlowSharpApp } from "app/slowsharp";
 
-export const DesktopPage = ({
-
-}) => {
-  return(
+export const DesktopPage = ({}) => {
+  return (
     <Desktop>
-      <SectionLabel>
-        Personal Profile
-      </SectionLabel>
+      <SectionLabel>Personal Profile</SectionLabel>
       <Push />
       <LargeClock />
       <LineFeed />
 
       <Shortcut
-        src={require('asset/app/github/icon.png').default}
+        src={require("asset/app/github/icon.png").default}
         name="Github"
         onClick={() => App.launch(GithubApp)}
       />
       <LineFeed />
 
-      <SectionLabel>
-        Game Development
-      </SectionLabel>
-      <LineFeed />
-
-      <Shortcut
-        src={require('asset/icon/vr.png').default}
-        name="VR Works"
-        onClick={() => App.launch(VRApp)}
-      />
-      <Shortcut
-        src={require('asset/app/youtubewall/icon.png').default}
-        name="Youtube Wall"
-        onClick={() => App.launch(BrowserApp, {
-          url: 'https://pjc0247.github.io/youtube-wall/',
-          width: 1400,
-          height: 800,
-        })}
-      />
-      <Shortcut
-        src={require('asset/app/tower2d/icon.png').default}
-        name="異世界TD"
-        onClick={() => App.launch(BrowserApp, {
-          url: 'https://www.youtube.com/embed/LRqARzM57YY',
-          width: 480,
-          height: 640,
-        })}
-      />
-      <Shortcut
-        src={require('asset/icon/gallery.png').default}
-        name="Gallery"
-        onClick={() => App.launch(GalleryApp)}
-      />
-      <Shortcut
-        src={require('asset/app/blade/icon.png').default}
-        name="Blade"
-        onClick={() => App.launch(BladeApp)}
-      />
-      <Shortcut
-        src={require('asset/app/rania/icon.png').default}
-        name="RaniaSaga"
-        onClick={() => App.launch(RaniaApp)}
-      />
-      <LineFeed />
-
-      <div style={{ display: 'flex', width: '100%' }}>
+      <div style={{ display: "flex", width: "100%" }}>
         <div>
-          <SectionLabel>
-            Compilers
-          </SectionLabel>
+          <SectionLabel>Solve this Problem</SectionLabel>
           <LineFeed />
 
           <Shortcut
-            src={require('asset/app/rookie/icon.png').default}
-            name="Rookie" 
-            onClick={() => App.launch(RookieApp)}
-          />
-          <Shortcut
-            src={require('asset/app/slowsharp/icon.png').default}
-            name="SlowSharp"
-            onClick={() => App.launch(SlowSharpApp)}
+            src={require("asset/icon/gallery.png").default}
+            name="Gallery"
+            onClick={() => App.launch(GalleryApp)}
           />
           <LineFeed />
         </div>
-        <div style={{ width: '360px' }} />
+        <div style={{ width: "360px" }} />
         <div>
-          <SectionLabel>
-            FE Development
-          </SectionLabel>
+          <SectionLabel>Hints</SectionLabel>
           <LineFeed />
           <Shortcut
-            src={require('asset/icon/rgb.png').default}
-            name="ColorPicker"
-            onClick={() => App.launch(BrowserApp, {
-              url: 'https://pjc0247.github.io/index_old.html',
-              width: 1024,
-              height: 700,
-            })}
+            src={require("asset/icon/rgb.png").default}
+            name="steganography"
+            onClick={() =>
+              App.launch(BrowserApp, {
+                url: "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%85%8C%EA%B0%80%EB%85%B8%EA%B7%B8%EB%9E%98%ED%94%BC",
+                width: 1024,
+                height: 640,
+              })
+            }
           />
           <Shortcut
-            src={require('asset/icon/manga.png').default}
-            name="Kakao Webtoon"
-            onClick={() => App.launch(BrowserApp, {
-              url: 'https://www.youtube.com/embed/2PAI27KBBAY',
-              width: 480,
-              height: 740,
-            })}
+            src={require("asset/icon/cat.png").default}
+            name="Cat 명령어"
+            onClick={() =>
+              App.launch(BrowserApp, {
+                url: "https://codechacha.com/ko/linux-cat/",
+                width: 480,
+                height: 740,
+              })
+            }
           />
           <LineFeed />
         </div>
       </div>
 
-      <SectionLabel>
-        Miscellaneous
-      </SectionLabel>
+      <SectionLabel>WebOS Playground</SectionLabel>
       <LineFeed />
       <Shortcut
-        src={require('asset/icon/rgb.png').default}
-        name="ColorPicker"
-        onClick={() => App.launch(BrowserApp, {
-          url: 'https://pjc0247.github.io/index_old.html',
-          width: 1024,
-          height: 700,
-        })}
-      />
-      <LineFeed />
-
-      <SectionLabel>
-        WebOS Playground
-      </SectionLabel>
-      <LineFeed />
-      <Shortcut
-        src={require('asset/app/blank/icon.png').default}
-        name="Blank"
+        src={require("asset/app/blank/icon.png").default}
+        name="Thanks To"
         onClick={() => App.launch(BlankApp)}
       />
       <Shortcut
-        src={require('asset/app/codepad/icon.png').default}
+        src={require("asset/app/codepad/icon.png").default}
         name="CodePad"
         onClick={() => App.launch(CodepadApp)}
       />
       <Shortcut
-        src={require('asset/icon/code.png').default}
+        src={require("asset/icon/code.png").default}
         name="Source Code"
-        onClick={() => window.open('https://github.com/pjc0247/new-home')}
+        onClick={() => window.open("https://github.com/gomjellie/new-home")}
       />
     </Desktop>
   );
